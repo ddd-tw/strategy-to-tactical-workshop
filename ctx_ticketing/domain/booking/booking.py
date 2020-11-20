@@ -10,6 +10,7 @@ class BookingState(Enum):
     Editing = 0,
     Established = 1,
     Discord = 2
+    PayToFinished = 3
 
 
 class TripType(Enum):
@@ -32,3 +33,12 @@ class BookingInfo(AggregateRoot):
         self._trip_type = trip_type
         self._itineraries = itineraries
         self._contactinfo = contactinfo
+
+    @classmethod
+    def create(cls,
+               bkid: BookingId,
+               trip_type: TripType,
+               itineraries: List[Itinerary],
+               contact: ContactInfo) -> "BookingInfo":
+
+        return cls(bkid, BookingState.Established, trip_type, itineraries, contact)

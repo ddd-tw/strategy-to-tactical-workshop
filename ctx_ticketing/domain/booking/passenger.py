@@ -26,12 +26,12 @@ class Passenger(ValueObject):
     salutation: SalutationType
     age_type: AgeGroupType
 
-    def __eq__(self, other: object) -> bool:
-        if other is None: return False
-        if type(self) != type(other): return False
-        other = cast(Passenger, other)
-        return (self.salutation, self.family_name, self.given_name, self.age_type, self.passport_number) \
-            == (other.salutation, other.family_name, other.given_name, other.age_type, other.passport_number)
+    # def __eq__(self, other: object) -> bool:
+    #     if other is None: return False
+    #     if type(self) != type(other): return False
+    #     other = cast(Passenger, other)
+    #     return (self.salutation, self.family_name, self.given_name, self.age_type, self.passport_number) \
+    #         == (other.salutation, other.family_name, other.given_name, other.age_type, other.passport_number)
 
-    def __hash__(self) -> int:
-        return hash((self.salutation, self.family_name, self.given_name, self.age_type, self.passport_number))
+    # def __hash__(self) -> int:
+    #     return hash((self.salutation, self.family_name, self.given_name, self.age_type, self.passport_number))

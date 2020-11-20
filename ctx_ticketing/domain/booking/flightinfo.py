@@ -1,8 +1,7 @@
 from enum import Enum
-from typing import cast, List
-from datetime import date
 from dataclasses import dataclass
 from pydomain.basecls.valueobject import ValueObject
+from .money import Money
 
 
 class CabinClassType(Enum):
@@ -20,3 +19,4 @@ class FlightInfo(ValueObject):
     flight_number: str
     aircraft: str
     cabin_class: CabinClassType
+    fee: Money
