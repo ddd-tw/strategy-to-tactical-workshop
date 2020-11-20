@@ -1,0 +1,16 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+flake8 = "*"
+mypy = "*"
+assertpy = "*"
+pytest-cov = "*"
+
+[packages]
+pydomain = {editable = true, git = "https://github.com/kokokuo/pydomain.git"}
+
+[requires]
+python_version = "3.7"
